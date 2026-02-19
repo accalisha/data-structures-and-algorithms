@@ -1,12 +1,29 @@
+import time
+import random
 #Reverse list
-listOfIntegers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+listOfIntegers = []
+for i in range(1, 10001):
+    listOfIntegers.append(random.randrange(0, 10000))
+
 
 def reverse(n):
     reversedList = []
-      
+
+    start = time.time()
     for i in range(len(n) - 1, -1, -1):
         reversedList.append(listOfIntegers[i])
-    
-    return reversedList
+    end = time.time()
 
-print(reverse(listOfIntegers))
+    return reversedList, print(end - start)
+
+def python_reverse(n):
+    start = time.time()
+    a = reversed(n)
+    end = time.time()
+
+    return list(a), print(end - start)
+
+python_reverse(listOfIntegers)
+reverse(listOfIntegers)
+
+#Pythons built-in function reversed() is slower for 100000 times than list in 10kk iteration
