@@ -9,4 +9,4 @@ def sumOfSquares(n):
     
     return result
 
-print(sumOfSquares(5))
+print(sumOfSquares(100000000))
